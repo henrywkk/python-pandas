@@ -27,7 +27,14 @@ print(df)
 # 3  1002        NaN    1003.0  A1002  B1002
 # 4  1005     1001.0       NaN  A1005    NaN
 
-for i in range(len(df)):
+import networkx as nx
+G=nx.from_pandas_edgelist(df[~df['Child Id'].isna()], 'Id', 'Child Id',
+                          edge_attr=True, create_using=nx.DiGraph())
+print(nx.dag_longest_path(G))  # [1002, 1003, 1004.0]
+max_length_of_relationships = nx.dag_longest_path_length(G)
+print(max_length_of_relationships)  # 2
+
+for i in range(max_length_of_relationships):
     df = df.merge(df[['Id', 'B']].rename({'Id': 'Parent Id', 'B': 'Parent B'}, axis=1), how='left')
     df['B'] = df['B'].combine_first(df['Parent B'])
     df.drop('Parent B', axis=1, inplace=True)

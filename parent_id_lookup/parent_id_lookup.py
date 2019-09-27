@@ -1,13 +1,13 @@
-'''
-    Merge multiple rows from same dataframe based on parent id
-
-    I have a dataframe where some rows have a parent-child relationship. For example, 1002 is the parent of 1003, 1003
-    is the parent of 1004. I want to merge the rows to keep only those rows without child item. However, some
-    information appear only in the parent row but missing from child rows, e.g. column 'B' from 1002. I want to
-    inherit it to the latest child row.
-
-    https://stackoverflow.com/questions/58073380/merge-multiple-rows-from-same-dataframe-based-on-parent-id
-'''
+##################################
+# Merge multiple rows from same dataframe based on parent id
+#
+# I have a dataframe where some rows have a parent-child relationship. For example, 1002 is the parent of 1003, 1003
+# is the parent of 1004. I want to merge the rows to keep only those rows without child item. However, some
+# information appear only in the parent row but missing from child rows, e.g. column 'B' from 1002. I want to
+# inherit it to the latest child row.
+#
+# https://stackoverflow.com/questions/58073380/merge-multiple-rows-from-same-dataframe-based-on-parent-id
+##################################
 
 import pandas as pd
 import numpy as np
@@ -28,8 +28,8 @@ print(df)
 # 4  1005     1001.0       NaN  A1005    NaN
 
 import networkx as nx
-G=nx.from_pandas_edgelist(df[~df['Child Id'].isna()], 'Id', 'Child Id',
-                          edge_attr=True, create_using=nx.DiGraph())
+G = nx.from_pandas_edgelist(df[~df['Child Id'].isna()], 'Id', 'Child Id',
+                            edge_attr=True, create_using=nx.DiGraph())
 print(nx.dag_longest_path(G))  # [1002, 1003, 1004.0]
 max_length_of_relationships = nx.dag_longest_path_length(G)
 print(max_length_of_relationships)  # 2

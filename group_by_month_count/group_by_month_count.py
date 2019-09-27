@@ -1,6 +1,4 @@
-'''
-Count the number instances of date for any month-year combination
-'''
+# Count the number instances of date for any month-year combination
 import pandas as pd
 
 paydate = pd.DataFrame()
@@ -13,16 +11,15 @@ print(paydate)
 # 3 2017-12-07
 # 4 2017-12-21
 
-'''
-Use Grouper with GroupBy.size or DataFrame.resample with Resampler.size 
-output is DatetimeIndex
+# Use Grouper with GroupBy.size or DataFrame.resample with Resampler.size
+# output is DatetimeIndex
+#
+# Reference:
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.GroupBy.size.html
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.resample.Resampler.size.html
 
-Reference:
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.GroupBy.size.html
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.resample.Resampler.size.html
-'''
 print(paydate.groupby(pd.Grouper(freq='M', key='PayDate')).size())
 # PayDate
 # 2017-10-31    1
@@ -37,13 +34,11 @@ print(paydate.resample('M', on='PayDate').size())
 # 2017-12-31    2
 # Freq: M, dtype: int64
 
-'''
-Create month periods by Series.dt.to_period - 
-output is PeriodIndex
-
-Reference:
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.to_period.html
-'''
+# Create month periods by Series.dt.to_period -
+# output is PeriodIndex
+#
+# Reference:
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.to_period.html
 
 print(paydate.groupby(paydate['PayDate'].dt.to_period('m')).size())
 # PayDate

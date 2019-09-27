@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def top3():
     # Top 3 Cost Notional in a dataframe group by Underlying 
     df = pd.DataFrame(columns=["Portfolio", "Underlying", "Cost Notional"],

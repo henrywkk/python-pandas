@@ -5,10 +5,10 @@ Merge dataframes on 1 column for which the output to be an extra column instead 
 import pandas as pd
 
 df1 = pd.DataFrame({'A': ['A0'],
-                     'B': ['B0']})
+                    'B': ['B0']})
 
 df2 = pd.DataFrame({'A': ['A0', 'A0'],
-                     'C': ['C4', 'C5']})
+                    'C': ['C4', 'C5']})
 print(df1)
 #     A   B
 # 0  A0  B0

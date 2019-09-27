@@ -1,5 +1,6 @@
 # Examples to select rows from a dataframe based on the values in a column
-# reference: https://stackoverflow.com/questions/17071871/select-rows-from-a-dataframe-based-on-values-in-a-column-in-pandas
+# reference:
+# https://stackoverflow.com/questions/17071871/select-rows-from-a-dataframe-based-on-values-in-a-column-in-pandas
 
 import pandas as pd
 import numpy as np
@@ -39,7 +40,8 @@ print(df.loc[df['B'].isin(['one', 'three'])])
 # 6  foo    one  6  12
 # 7  foo  three  7  14
 
-# Note, however, that if you wish to do this many times, it is more efficient to make an index first, and then use df.loc:
+# Note, however, that if you wish to do this many times,
+# it is more efficient to make an index first, and then use df.loc:
 df = df.set_index(['B'])
 print("==== Example 3====")
 print(df.loc['one'])

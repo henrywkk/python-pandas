@@ -10,3 +10,5 @@ A library or placeholder for myself to put the pandas examples so that I can reu
 [parent_id_lookup.py](https://github.com/henrywkk/python-pandas/blob/master/parent_id_lookup/parent_id_lookup.py) - Merge multiple rows from same dataframe based on parent id
 
 [group_by_month_count.py](https://github.com/henrywkk/python-pandas/blob/master/group_by_month_count/group_by_month_count.py) - Count the number instances of date for any month-year combination
+
+[merge_as_new_columns.py](https://github.com/henrywkk/python-pandas/blob/master/merge_as_new_columns/merge_as_new_columns.py) -  Merge dataframes with output on extra columns

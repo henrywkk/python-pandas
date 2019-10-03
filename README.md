@@ -14,3 +14,5 @@ A library or placeholder for myself to put the pandas examples so that I can reu
 [merge_as_new_columns.py](https://github.com/henrywkk/python-pandas/blob/master/merge_as_new_columns/merge_as_new_columns.py) -  Merge dataframes with output on extra columns
 
 [fillna_with_avg.py](https://github.com/henrywkk/python-pandas/blob/master/fillna_with_avg/fillna_with_avg.py) - Fill empty values with average of other values based on group by
+
+[multiple_condition_next_column_val.py](https://github.com/henrywkk/python-pandas/blob/master/multiple_condition_next_column_val/multiple_condition_next_column_val.py) - Populate row with next conditional value based on multiple columns

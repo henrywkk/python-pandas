@@ -18,3 +18,5 @@ A library or placeholder for myself to put the pandas examples so that I can reu
 [multiple_condition_next_column_val.py](https://github.com/henrywkk/python-pandas/blob/master/multiple_condition_next_column_val/multiple_condition_next_column_val.py) - Populate row with next conditional value based on multiple columns
 
 [groupby-total.py](https://github.com/henrywkk/python-pandas/blob/master/groupby-total/groupby-total.py) - Add aggregated/summary lines in dataframe
+
+[transpose_row3col.py](https://github.com/henrywkk/python-pandas/tree/master/transpose_row2col) - Transpose dataframe columns based on a column's row values
